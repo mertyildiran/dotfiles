@@ -144,9 +144,9 @@ enable = true
 name = 'ryanoasis/vim-devicons'
 enable = true
 
-#[[custom_plugins]]
-#name = 'airblade/vim-gitgutter'
-#enable = true
+[[custom_plugins]]
+name = 'airblade/vim-gitgutter'
+enable = true
 
 [[custom_plugins]]
 name = 'jwalton512/vim-blade'

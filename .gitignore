@@ -7,3 +7,5 @@
 !.SpaceVim.d/
 !.SpaceVim.d/init.toml
 !.wakatime.cfg.example
+!setup-script.sh
+!startup-script.sh

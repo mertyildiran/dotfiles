@@ -22,7 +22,7 @@
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
-    enable_statusline_display_mode = false
+    enable_statusline_mode = false
 
 # Enable autocomplete layer
 [[layers]]
@@ -87,6 +87,7 @@ enable = true
 name = 'lang#ocaml'
 enable = true
 
+# Disable folding: set nofoldenable
 [[layers]]
 name = 'lang#php'
 enable = true
@@ -107,6 +108,7 @@ enable = true
 name = 'lang#vim'
 enable = true
 
+# For outline: apt install exuberant-ctags
 [[layers]]
 name = 'ui'
 enable = true
@@ -120,7 +122,7 @@ name = 'github'
 enable = true
 
 [[layers]]
-name = 'denite'
+name = 'unite'
 enable = true
 
 [[layers]]

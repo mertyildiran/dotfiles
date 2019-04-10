@@ -43,6 +43,19 @@ cd Popcorn/
 wget https://mirror03.popcorntime.sh/repo/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
 tar -xvf Popcorn-Time-0.3.10-Linux-64.tar.xz
 
+# Make tmux the default screen multiplexer for each shell session
+read -d '' TMUX_DEFAULT << EOF
+alias g=\"grep\"
+alias ls=\"ls --color=auto\"
+
+# ...other stuff...
+
+if [[ ! $TERM =~ screen ]]; then
+    exec tmux
+fi
+EOF
+echo $TMUX_DEFAULT >> ~/.bashrc
+
 # Increase the volume of audio card
 alsamixer
 sudo alsactl store

@@ -27,6 +27,7 @@
     filetree_direction = "left"
     enable_tabline_filetype_icon = true
     #statusline_unicode_symbols = 0
+    vimfiler_print_filename = true
 
 # Enable autocomplete layer
 [[layers]]
@@ -37,7 +38,7 @@ auto-completion-tab-key-behavior = "smart"
 [[layers]]
 name = 'shell'
 default_position = 'top'
-default_height = 30
+default_height = 12
 
 [[layers]]
 name = 'colorscheme'
@@ -144,3 +145,8 @@ enable = true
 #[[custom_plugins]]
 #name = 'airblade/vim-gitgutter'
 #enable = true
+
+[[custom_plugins]]
+name = 'jwalton512/vim-blade'
+enable = true
+

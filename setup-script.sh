@@ -59,6 +59,9 @@ echo $TMUX_DEFAULT >> ~/.bashrc
 # Install Exuberant Ctags for SpaceVim UI Layer Outline
 sudo apt install exuberant-ctags
 
+# Install pynvim for deoplete in SpaceVim
+sudo pip3 install --user pynvim
+
 # Increase the volume of audio card
 alsamixer
 sudo alsactl store

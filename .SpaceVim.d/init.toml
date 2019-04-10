@@ -133,6 +133,10 @@ name = 'github'
 enable = true
 
 [[layers]]
+name = "VersionControl"
+enable = true
+
+[[layers]]
 name = 'unite'
 enable = true
 
@@ -148,9 +152,9 @@ enable = true
 name = 'ryanoasis/vim-devicons'
 enable = true
 
-[[custom_plugins]]
-name = 'airblade/vim-gitgutter'
-enable = true
+#[[custom_plugins]]
+#name = 'airblade/vim-gitgutter'
+#enable = true
 
 [[custom_plugins]]
 name = 'jwalton512/vim-blade'

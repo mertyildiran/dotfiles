@@ -124,6 +124,11 @@ enable = true
 name = "tags"
 enable = true
 
+# https://github.com/idanarye/vim-vebugger
+[[layers]]
+name = "debug"
+enable = true
+
 # For outline: apt install exuberant-ctags
 [[layers]]
 name = 'ui'
@@ -147,6 +152,10 @@ enable = true
 
 [[layers]]
 name = "tmux"
+enable = true
+
+[[layers]]
+name = "default"
 enable = true
 
 [[custom_plugins]]

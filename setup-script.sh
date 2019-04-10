@@ -70,6 +70,9 @@ sudo dpkg -i ripgrep_0.10.0_amd64.deb
 # Install the Silver Searcher for SpaceVim's fast search functionlaity
 sudo apt -y install silversearcher-ag
 
+# Install GNU GLobal for SpaceVim's "go to definition" feature / gtags layer
+sudo apt -y install global
+
 # Increase the volume of audio card
 alsamixer
 sudo alsactl store

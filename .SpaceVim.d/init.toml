@@ -119,6 +119,11 @@ enable = true
 name = 'lang#vim'
 enable = true
 
+# Install GNU Global: apt install global
+[[layers]]
+name = "tags"
+enable = true
+
 # For outline: apt install exuberant-ctags
 [[layers]]
 name = 'ui'

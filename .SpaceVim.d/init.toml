@@ -21,6 +21,7 @@
     statusline_separator = "arrow"
     statusline_inactive_separator = "arrow"
     buffer_index_type = 4
+    enable_vimfiler_filetypeicon = true
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
     # Show vimfiler on left
@@ -28,6 +29,7 @@
     enable_tabline_filetype_icon = true
     #statusline_unicode_symbols = 0
     vimfiler_print_filename = true
+    search_highlight_persist = true
 
 # Enable autocomplete layer
 [[layers]]
@@ -149,4 +151,3 @@ enable = true
 [[custom_plugins]]
 name = 'jwalton512/vim-blade'
 enable = true
-

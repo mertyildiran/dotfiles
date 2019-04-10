@@ -122,3 +122,11 @@ enable = true
 [[layers]]
 name = 'denite'
 enable = true
+
+[[layers]]
+name = "tmux"
+enable = true
+
+[[custom_plugins]]
+name = 'wakatime/vim-wakatime'
+enable = true

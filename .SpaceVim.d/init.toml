@@ -25,6 +25,8 @@
     enable_statusline_mode = false
     # Show vimfiler on left
     filetree_direction = "left"
+    enable_tabline_filetype_icon = true
+    #statusline_unicode_symbols = 0
 
 # Enable autocomplete layer
 [[layers]]
@@ -134,3 +136,11 @@ enable = true
 [[custom_plugins]]
 name = 'wakatime/vim-wakatime'
 enable = true
+
+[[custom_plugins]]
+name = 'ryanoasis/vim-devicons'
+enable = true
+
+#[[custom_plugins]]
+#name = 'airblade/vim-gitgutter'
+#enable = true

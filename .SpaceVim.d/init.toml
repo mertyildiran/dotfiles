@@ -30,6 +30,10 @@
     #statusline_unicode_symbols = 0
     vimfiler_print_filename = true
     search_highlight_persist = true
+    # Tagbar stuff
+    tagbar_show_visibility = true
+    tagbar_show_linenumbers = 1
+
 
 # Enable autocomplete layer
 [[layers]]

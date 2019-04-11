@@ -73,6 +73,10 @@ sudo apt -y install silversearcher-ag
 # Install GNU GLobal for SpaceVim's "go to definition" feature / gtags layer
 sudo apt -y install global
 
+# Add system clipboard support to Vim / SpaceVim
+sudo apt -y install vim-gtk
+sudo apt -y install xclip
+
 # Increase the volume of audio card
 alsamixer
 sudo alsactl store

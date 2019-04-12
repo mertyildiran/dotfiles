@@ -77,6 +77,9 @@ sudo apt -y install global
 sudo apt -y install vim-gtk
 sudo apt -y install xclip
 
+# Install npm for SpaceVim
+sudo apt -y install npm
+
 # Increase the volume of audio card
 alsamixer
 sudo alsactl store

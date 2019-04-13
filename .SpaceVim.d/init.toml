@@ -26,9 +26,6 @@
     enable_statusline_mode = false
     # Show vimfiler on left
     filetree_direction = "left"
-    # vimfiler options
-    #vimfiler_tree_closed_icon = ">"
-    #vimfiler_tree_indentation = 4
     enable_vimfiler_gitstatus = true
     enable_tabline_filetype_icon = true
     #statusline_unicode_symbols = 0
@@ -39,6 +36,7 @@
     tagbar_show_linenumbers = 1
     # GitHub stuff
     github_username = "mertyildiran"
+    bootstrap_before = "myspacevim#before"
 
 
 # Enable autocomplete layer

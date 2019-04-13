@@ -9,3 +9,5 @@
 !.wakatime.cfg.example
 !setup-script.sh
 !startup-script.sh
+!.SpaceVim.d/autoload/
+!.SpaceVim.d/autoload/myspacevim.vim

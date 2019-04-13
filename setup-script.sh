@@ -77,7 +77,7 @@ sudo apt -y install global
 sudo apt -y install vim-gtk
 sudo apt -y install xclip
 
-# Install npm for SpaceVim
+# Install npm for SpaceVim / tern_for_vim
 sudo apt -y install npm
 
 # Increase the volume of audio card

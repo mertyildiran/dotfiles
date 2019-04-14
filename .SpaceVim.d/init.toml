@@ -26,7 +26,7 @@
     enable_statusline_mode = false
     # Show vimfiler on left
     filetree_direction = "left"
-    enable_vimfiler_gitstatus = true
+    #enable_vimfiler_gitstatus = true
     enable_tabline_filetype_icon = true
     #statusline_unicode_symbols = 0
     vimfiler_print_filename = true
@@ -42,7 +42,7 @@
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
-auto-completion-delay = 1
+auto-completion-delay = 3
 auto-completion-return-key-behavior = "smart"
 auto-completion-tab-key-behavior = "smart"
 

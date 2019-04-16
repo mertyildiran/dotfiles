@@ -37,6 +37,8 @@
     # GitHub stuff
     github_username = "mertyildiran"
     bootstrap_before = "myspacevim#before"
+    # Disabled plugins
+    disabled_plugins = ['phpfold.vim']
 
 
 # Enable autocomplete layer

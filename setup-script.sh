@@ -80,6 +80,9 @@ sudo apt -y install xclip
 # Install npm for SpaceVim / tern_for_vim
 sudo apt -y install npm
 
+# Install SpaceVim
+curl -sLf https://spacevim.org/install.sh | bash
+
 # Increase the volume of audio card
 alsamixer
 sudo alsactl store

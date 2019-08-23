@@ -40,6 +40,7 @@
     bootstrap_before = "myspacevim#before"
     # Disabled plugins
     disabled_plugins = ['phpfold.vim']
+    guifont = "Menlo, Consolas, DejaVu Sans Mono, monospace"
 
 
 # Enable autocomplete layer

@@ -92,3 +92,6 @@ sudo apt -y install resolvconf
 echo "nameserver 8.8.8.8
 nameserver 8.8.4.4" | sudo tee -a /etc/resolvconf/resolv.conf.d/base
 sudo resolvconf -u
+
+# Install the collection of base networking utilities
+sudo apt -y install net-tools

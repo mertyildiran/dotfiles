@@ -86,3 +86,9 @@ curl -sLf https://spacevim.org/install.sh | bash
 # Increase the volume of audio card
 alsamixer
 sudo alsactl store
+
+# Use Google DNS
+sudo apt -y install resolvconf
+echo "nameserver 8.8.8.8
+nameserver 8.8.4.4" | sudo tee -a /etc/resolvconf/resolv.conf.d/base
+sudo resolvconf -u

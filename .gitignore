@@ -14,3 +14,7 @@
 !.config/
 !.config/tilda/
 !.config/tilda/config_0
+!.vimrc
+!.vim/
+!.vim/autoload/
+!.vim/autoload/plug.vim

@@ -11,3 +11,6 @@
 !startup-script.sh
 !.SpaceVim.d/autoload/
 !.SpaceVim.d/autoload/myspacevim.vim
+!.config/
+!.config/tilda/
+!.config/tilda/config_0

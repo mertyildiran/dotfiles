@@ -19,7 +19,11 @@ nvidia-settings --assign CurrentMetaMode="nvidia-auto-select +0+0 { ForceFullCom
 
 # --- Guake Terminal ---
 # Run Guake on startup
-guake &
+#guake &
+
+# --- Tilda Terminal ---
+# Run Tilda on startup
+tilda &
 
 # --- Guake Terminal ---
 # Run Guake on startup

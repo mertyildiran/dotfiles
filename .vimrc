@@ -84,6 +84,7 @@ Plug 'ervandew/supertab'
 
 " a command-line fuzzy finder
 Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
 
 " Use RipGrep in Vim and display results in a quickfix list
 Plug 'jremmen/vim-ripgrep'
@@ -96,6 +97,54 @@ Plug 'nelstrom/vim-visual-star-search'
 
 " Asynchronously fly grep in vim
 Plug 'wsdjeg/FlyGrep.vim'
+
+" Automatically save changes to disk in Vim
+"Plug '907th/vim-auto-save'
+
+" Vim plugin for the Perl module / CLI script 'ack'
+Plug 'mileszs/ack.vim'
+
+" True Sublime Text style multiple selections for Vim
+Plug 'terryma/vim-multiple-cursors'
+
+" a Vim plugin to display the indention levels with thin vertical lines
+Plug 'Yggdroot/indentLine'
+
+" Provide easy code formatting in Vim by integrating existing code formatters.
+Plug 'chiel92/vim-autoformat'
+
+" Markdown Vim Mode
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+
+" an extensible & universal comment vim-plugin that also handles embedded filetypes
+Plug 'tomtom/tcomment_vim'
+
+" Vim plugin to visualize your Vim undo tree
+Plug 'sjl/gundo.vim'
+
+" a solid language pack for Vim
+Plug 'sheerun/vim-polyglot'
+
+" Defaults everyone can agree on
+Plug 'tpope/vim-sensible'
+
+" EditorConfig plugin for Vim
+Plug 'editorconfig/editorconfig-vim'
+
+
+" --- JavaSript ---
+" Vastly improved Javascript indentation and syntax support in Vim
+Plug 'pangloss/vim-javascript'
+
+" --- JSON ---
+" a better JSON for Vim: distinct highlighting of keywords vs values, JSON-specific (non-JS) warnings, quote concealing
+Plug 'elzr/vim-json'
+
+" --- HTML ---
+" HTML5 omnicomplete and syntax
+Plug 'othree/html5.vim'
+
 
 " Initialize plugin system
 call plug#end()
@@ -113,6 +162,9 @@ call plug#end()
 :set incsearch
 let g:CoolTotalMatches = 1
 let g:rg_command = 'rg --vimgrep -S'
+if executable('ag')
+    let g:ackprg = 'ag --vimgrep'
+endif
 
 " FlyGrep.vim mapping
 nnoremap <C-S-f> :FlyGrep<CR>
@@ -142,7 +194,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-map <C-n> :NERDTreeToggle<CR>
+map <C-S-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -211,3 +263,15 @@ nnoremap <C-j> <C-w><C-j>
 
 " Cycle through splits.
 nnoremap <S-Tab> <C-w>w
+
+" Enable Autosave
+"let g:auto_save = 1
+
+" Enable the indent guides by default
+let g:indentLine_char_list = ['¦', '┆', '┊']
+
+" vim-autoformat
+noremap <F3> :Autoformat<CR>
+
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1

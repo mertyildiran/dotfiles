@@ -79,6 +79,9 @@ Plug 'mertyildiran/onedark.vim'
 " Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
 Plug 'ryanoasis/vim-devicons'
 
+" Perform all your vim insert mode completions with Tab
+Plug 'ervandew/supertab'
+
 " Initialize plugin system
 call plug#end()
 

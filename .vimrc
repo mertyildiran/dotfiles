@@ -83,6 +83,7 @@ call plug#end()
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
+:set number
 
 
 " Color Scheme (Atom's One Dark)
@@ -101,7 +102,9 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-
+let NERDTreeMapActivateNode='l'
+let NERDTreeMapCloseDir='h'
+let NERDTreeMapCloseChildren='x'
 
 " vim-gitgutter
 let g:gitgutter_override_sign_column_highlight = 1

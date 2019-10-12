@@ -82,6 +82,21 @@ Plug 'ryanoasis/vim-devicons'
 " Perform all your vim insert mode completions with Tab
 Plug 'ervandew/supertab'
 
+" a command-line fuzzy finder
+Plug 'junegunn/fzf'
+
+" Use RipGrep in Vim and display results in a quickfix list
+Plug 'jremmen/vim-ripgrep'
+
+" a very simple plugin that makes hlsearch more useful
+Plug 'romainl/vim-cool'
+
+" Start a * or # search from a visual block
+Plug 'nelstrom/vim-visual-star-search'
+
+" Asynchronously fly grep in vim
+Plug 'wsdjeg/FlyGrep.vim'
+
 " Initialize plugin system
 call plug#end()
 
@@ -91,6 +106,28 @@ call plug#end()
 :set shiftwidth=4
 :set expandtab
 :set number
+
+
+" Search and replacement related configurations
+:set hlsearch
+:set incsearch
+let g:CoolTotalMatches = 1
+let g:rg_command = 'rg --vimgrep -S'
+
+" FlyGrep.vim mapping
+nnoremap <C-S-f> :FlyGrep<CR>
+
+" Press * to search for the term under the cursor or a visual selection and
+" then press a key below to replace all instances of it in the current file.
+nnoremap <Leader>r :%s///g<Left><Left>
+nnoremap <Leader>rc :%s///gc<Left><Left><Left>
+
+" The same as above but instead of acting on the whole file it will be
+" restricted to the previously visually selected range. You can do that by
+" pressing *, visually selecting the range you want it to apply to and then
+" press a key below to replace all instances of it in the current selection.
+xnoremap <Leader>r :s///g<Left><Left>
+xnoremap <Leader>rc :s///gc<Left><Left><Left>
 
 
 " Color Scheme (Atom's One Dark)
@@ -165,3 +202,12 @@ autocmd FileType html,css EmmetInstall
 map gn :bn<cr>
 map gp :bp<cr>
 map gd :bd<cr>
+
+" Navigate around splits with a single key combo.
+nnoremap <C-l> <C-w><C-l>
+nnoremap <C-h> <C-w><C-h>
+nnoremap <C-k> <C-w><C-k>
+nnoremap <C-j> <C-w><C-j>
+
+" Cycle through splits.
+nnoremap <S-Tab> <C-w>w

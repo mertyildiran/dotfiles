@@ -91,7 +91,7 @@ if has("termguicolors")
 endif
 colorscheme onedark
 
-" NERDTree automatically open
+" NERDTree configurations
 autocmd vimenter * NERDTree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -150,3 +150,8 @@ let g:ctrlp_working_path_mode = 'ra'
 " Emmet-vim
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
+
+" Buffers
+map gn :bn<cr>
+map gp :bp<cr>
+map gd :bd<cr>

@@ -32,6 +32,10 @@ Plug 'vim-airline/vim-airline-themes'
 
 " fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
+" rhubarb.vim: GitHub extension for fugitive.vim
+Plug 'tpope/vim-rhubarb'
+" an extension to fugitive.vim for gitlab support
+Plug 'shumphrey/fugitive-gitlab.vim'
 
 " surround.vim: quoting/parenthesizing made simple
 Plug 'tpope/vim-surround'

@@ -3,7 +3,7 @@
 # Ubuntu 18.04 / KDE neon 5.14.3 clean setup
 
 sudo apt update
-sudo apt -y install build-essential cmake
+sudo apt -y install build-essential cmake python3-dev
 
 # Install Nvidia driver
 sudo apt -y install nvidia-384
@@ -79,6 +79,13 @@ sudo apt -y install xclip
 
 # Install npm for SpaceVim / tern_for_vim
 sudo apt -y install npm
+
+# Install the Vim plugins
+vim +'PlugInstall --sync' +qa
+
+# Compile YouCompleteMe
+cd ~/.vim/plugged/youcompleteme
+python3 install.py --clang-completer --ts-completer
 
 # Increase the volume of audio card
 alsamixer

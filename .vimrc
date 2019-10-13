@@ -157,7 +157,6 @@ call plug#end()
 :set number
 :set cursorline
 
-
 " Search and replacement related configurations
 :set hlsearch
 :set incsearch

@@ -132,6 +132,9 @@ Plug 'tpope/vim-sensible'
 " EditorConfig plugin for Vim
 Plug 'editorconfig/editorconfig-vim'
 
+" a Vim plugin to colorize all text in the form #rrggbb or #rgb<Paste>
+Plug 'lilydjwg/colorizer'
+
 
 " --- JavaSript ---
 " Vastly improved Javascript indentation and syntax support in Vim
@@ -145,6 +148,13 @@ Plug 'elzr/vim-json'
 " HTML5 omnicomplete and syntax
 Plug 'othree/html5.vim'
 
+" --- Laravel ---
+" Vim syntax highlighting for Blade templates
+Plug 'jwalton512/vim-blade'
+
+" --- Trackers ---
+" Vim plugin for automatic time tracking and metrics generated from your programming activity
+Plug 'wakatime/vim-wakatime'
 
 " Initialize plugin system
 call plug#end()

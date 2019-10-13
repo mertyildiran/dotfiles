@@ -95,9 +95,6 @@ Plug 'romainl/vim-cool'
 " Start a * or # search from a visual block
 Plug 'nelstrom/vim-visual-star-search'
 
-" Asynchronously fly grep in vim
-Plug 'wsdjeg/FlyGrep.vim'
-
 " Automatically save changes to disk in Vim
 Plug '907th/vim-auto-save'
 
@@ -176,8 +173,15 @@ if executable('ag')
     let g:ackprg = 'ag --vimgrep'
 endif
 
-" FlyGrep.vim mapping
-nnoremap <C-S-f> :FlyGrep<CR>
+" Silver Searcher remapping
+nnoremap <C-S-f> :Ag!<CR>
+
+" Silver Searcher with full screen preview
+command! -bang -nargs=* Ag
+  \ call fzf#vim#ag(<q-args>,
+  \                 <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
+  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
+  \                 <bang>0)
 
 " Press * to search for the term under the cursor or a visual selection and
 " then press a key below to replace all instances of it in the current file.

@@ -5,8 +5,8 @@
 !README.md
 !.tmux.conf
 !.wakatime.cfg.example
-!setup-script.sh
-!startup-script.sh
+!setup.sh
+!startup.sh
 !.config/
 !.config/tilda/
 !.config/tilda/config_0

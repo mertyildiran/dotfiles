@@ -56,6 +56,31 @@ fi
 EOF
 echo $TMUX_DEFAULT >> ~/.bashrc
 
+# Install the bleeding edge Vim version from an unofficial PPA
+sudo add-apt-repository ppa:jonathonf/vim -y
+sudo apt update
+sudo apt install vim
+
+# Install the stable version of Neovim for an official PPA
+sudo apt-add-repository ppa:neovim-ppa/stable
+sudo apt update
+sudo apt install neovim
+
+# Install vim-plug for Vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install vim-plug for Neovim
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Link NeoVim's configuration file to Vim's
+ln -s ~/.vimrc ~/.config/nvim/init.vim
+
+# Alias vim to nvim
+echo 'alias vim="nvim"' >> ~/.bash_aliases
+echo 'alias vi="nvim"' >> ~/.bash_aliases
+
 # Install Exuberant Ctags for SpaceVim UI Layer Outline
 sudo apt -y install exuberant-ctags
 

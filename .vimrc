@@ -99,7 +99,7 @@ Plug 'nelstrom/vim-visual-star-search'
 Plug 'wsdjeg/FlyGrep.vim'
 
 " Automatically save changes to disk in Vim
-"Plug '907th/vim-auto-save'
+Plug '907th/vim-auto-save'
 
 " Vim plugin for the Perl module / CLI script 'ack'
 Plug 'mileszs/ack.vim'
@@ -155,6 +155,7 @@ call plug#end()
 :set shiftwidth=4
 :set expandtab
 :set number
+:set cursorline
 
 
 " Search and replacement related configurations
@@ -194,7 +195,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-map <C-S-n> :NERDTreeToggle<CR>
+nnoremap <Leader>n :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -265,7 +266,7 @@ nnoremap <C-j> <C-w><C-j>
 nnoremap <S-Tab> <C-w>w
 
 " Enable Autosave
-"let g:auto_save = 1
+let g:auto_save = 1
 
 " Enable the indent guides by default
 let g:indentLine_char_list = ['¦', '┆', '┊']

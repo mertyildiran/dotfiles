@@ -58,9 +58,6 @@ Plug 'scrooloose/nerdcommenter'
 " a code-completion engine for Vim
 Plug 'valloric/youcompleteme'
 
-" Fuzzy file, buffer, mru, tag, etc finder
-Plug 'ctrlpvim/ctrlp.vim'
-
 " Emmet for vim
 Plug 'mattn/emmet-vim'
 
@@ -262,10 +259,8 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.branch = ''
 
-" ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
-let g:ctrlp_working_path_mode = 'ra'
+" CtrlP with Silver Searcher
+nnoremap <C-p> :FZF<CR>
 
 " Emmet-vim
 let g:user_emmet_install_global = 0

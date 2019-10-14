@@ -154,17 +154,17 @@ Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 
-:set encoding=UTF-8
-:set tabstop=4
-:set shiftwidth=4
-:set expandtab
-:set number
-:set cursorline
-:set mouse=a
+set encoding=UTF-8
+set tabstop=4
+set shiftwidth=4
+set expandtab
+set number
+set cursorline
+set mouse=a
 
 " Search and replacement related configurations
-:set hlsearch
-:set incsearch
+set hlsearch
+set incsearch
 let g:CoolTotalMatches = 1
 let g:rg_command = 'rg --vimgrep -S'
 if executable('ag')

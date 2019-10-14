@@ -160,6 +160,7 @@ call plug#end()
 :set expandtab
 :set number
 :set cursorline
+:set mouse=a
 
 " Search and replacement related configurations
 :set hlsearch

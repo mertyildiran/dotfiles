@@ -219,6 +219,8 @@ let NERDTreeMapCloseDir='h'
 let NERDTreeMapCloseChildren='x'
 let NERDTreeShowHidden=1
 let NERDTreeRespectWildIgnore=1
+" Jump to the main window after opening NERDTree
+autocmd VimEnter * wincmd p
 
 " vim-gitgutter
 let g:gitgutter_override_sign_column_highlight = 1

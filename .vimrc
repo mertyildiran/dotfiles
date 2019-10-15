@@ -295,3 +295,7 @@ let g:vim_markdown_folding_disabled = 1
 " YouCompleteMe configurations for C-family languages
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
+" Indent multiple times quickly
+vnoremap < <gv
+vnoremap > >gv

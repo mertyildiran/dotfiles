@@ -11,3 +11,5 @@
 !.config/tilda/
 !.config/tilda/config_0
 !.vimrc
+!.vim/
+!.vim/nerdtree_git_ignored_files.vim

@@ -179,11 +179,15 @@ source ~/.vim/nerdtree_git_ignored_files.vim
 set encoding=UTF-8
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set expandtab smarttab
 set number
 set cursorline
 set mouse=a
 set wildignore+=.git
+set autoindent
+set autoread
+set backspace=indent,eol,start
+set colorcolumn=120
 
 " Search and replacement related configurations
 set hlsearch
@@ -320,3 +324,6 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 " Indent multiple times quickly
 vnoremap < <gv
 vnoremap > >gv
+
+" vim-better-whitespace
+highlight ExtraWhitespace ctermbg=gray

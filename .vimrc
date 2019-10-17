@@ -129,6 +129,10 @@ Plug 'editorconfig/editorconfig-vim'
 " a Vim plugin to colorize all text in the form #rrggbb or #rgb<Paste>
 Plug 'lilydjwg/colorizer'
 
+" Ranger.vim
+Plug 'francoiscabrol/ranger.vim'
+Plug 'rbgrouleff/bclose.vim'
+
 
 " --- JavaSript ---
 " Vastly improved Javascript indentation and syntax support in Vim

@@ -124,3 +124,6 @@ sudo resolvconf -u
 
 # Install the collection of base networking utilities
 sudo apt -y install net-tools
+
+# Install ranger
+sudo apt -y install ranger

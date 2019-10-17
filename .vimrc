@@ -107,10 +107,6 @@ Plug 'Yggdroot/indentLine'
 " Provide easy code formatting in Vim by integrating existing code formatters.
 Plug 'chiel92/vim-autoformat'
 
-" Markdown Vim Mode
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-
 " an extensible & universal comment vim-plugin that also handles embedded filetypes
 Plug 'tomtom/tcomment_vim'
 
@@ -168,6 +164,46 @@ Plug 'jwalton512/vim-blade'
 " --- Trackers ---
 " Vim plugin for automatic time tracking and metrics generated from your programming activity
 Plug 'wakatime/vim-wakatime'
+
+" --- SCSS ---
+Plug 'cakebaker/scss-syntax.vim'
+
+" --- Nginx ---
+Plug 'chr4/nginx.vim'
+
+" --- Excel/CSV ---
+Plug 'chrisbra/csv.vim'
+
+" --- Docker ---
+Plug 'ekalinin/dockerfile.vim'
+
+" --- Markdown ---
+" Markdown Vim Mode
+Plug 'godlygeek/tabular'
+Plug 'plasticboy/vim-markdown'
+" Markdown preview
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
+
+" --- Vim syntax ---
+Plug 'PotatoesMaster/i3-vim-syntax'
+
+" --- YAML ---
+Plug 'stephpy/vim-yaml'
+
+" --- TMUX ---
+Plug 'tmux-plugins/vim-tmux'
+
+" --- Ruby ---
+Plug 'vim-ruby/vim-ruby'
+
+" --- Ruby on Rails ---
+Plug 'tpope/vim-rails'
+
+" --- Python ---
+Plug 'vim-python/python-syntax'
+
+" --- systemd ---
+Plug 'wgwoods/vim-systemd-syntax'
 
 " Initialize plugin system
 call plug#end()
@@ -326,4 +362,5 @@ vnoremap < <gv
 vnoremap > >gv
 
 " vim-better-whitespace
-highlight ExtraWhitespace ctermbg=gray
+let g:better_whitespace_ctermcolor='gray'
+let g:better_whitespace_guicolor='gray'

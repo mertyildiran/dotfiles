@@ -102,8 +102,11 @@ sudo apt -y install global
 sudo apt -y install vim-gtk
 sudo apt -y install xclip
 
-# Install npm for SpaceVim / tern_for_vim
+# Install npm
 sudo apt -y install npm
+
+# Install yarn
+sudo apt -y install yarn
 
 # Install the Vim plugins
 vim +'PlugInstall --sync' +qa

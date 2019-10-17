@@ -133,6 +133,21 @@ Plug 'lilydjwg/colorizer'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'rbgrouleff/bclose.vim'
 
+" Run a diff on 2 directories.
+Plug 'will133/vim-dirdiff'
+
+" Add spelling errors to the quickfix list (vim-ingo-library is a dependency).
+Plug 'inkarkat/vim-ingo-library' | Plug 'inkarkat/vim-SpellCheck'
+
+" Better display unwanted whitespace.
+Plug 'ntpeters/vim-better-whitespace'
+
+" Automatically set 'shiftwidth' + 'expandtab' (indention) based on file type.
+Plug 'tpope/vim-sleuth'
+
+" Run test suites for various languages.
+Plug 'janko/vim-test'
+
 
 " --- JavaSript ---
 " Vastly improved Javascript indentation and syntax support in Vim

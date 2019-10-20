@@ -76,9 +76,6 @@ Plug 'mertyildiran/onedark.vim'
 " Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more
 Plug 'ryanoasis/vim-devicons'
 
-" Perform all your vim insert mode completions with Tab
-Plug 'ervandew/supertab'
-
 " a command-line fuzzy finder
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
@@ -211,6 +208,7 @@ call plug#end()
 
 source ~/.vim/nerdtree_git_ignored_files.vim
 
+filetype plugin indent on
 
 set encoding=UTF-8
 set tabstop=4
@@ -223,7 +221,8 @@ set wildignore+=.git
 set autoindent
 set autoread
 set backspace=indent,eol,start
-set colorcolumn=120
+set textwidth=80
+set colorcolumn=80
 
 " Search and replacement related configurations
 set hlsearch
@@ -364,3 +363,10 @@ vnoremap > >gv
 " vim-better-whitespace
 let g:better_whitespace_ctermcolor='gray'
 let g:better_whitespace_guicolor='gray'
+
+" https://vi.stackexchange.com/a/8383/21731
+" https://stackoverflow.com/a/33292042/2104879
+augroup python
+  autocmd!
+  autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+augroup end

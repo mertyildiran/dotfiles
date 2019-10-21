@@ -26,6 +26,10 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
 
 POWERLEVEL9K_SHOW_CHANGESET=true
 
+# History size
+HISTSIZE=10000
+SAVEHIST=10000
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
@@ -84,7 +88,11 @@ POWERLEVEL9K_SHOW_CHANGESET=true
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    last-working-dir
+    colored-man-pages
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -101,6 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -113,7 +122,6 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source /home/mertyildiran/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -123,3 +131,10 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
+# Plugins
+source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# Enable completions
+autoload -U compinit
+compinit

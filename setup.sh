@@ -54,9 +54,14 @@ sed -i \
 's/_THEME=\"robbyrussel\"/_THEME=\"agnoster\"/g' \
 ~/.zshrc
 
+# Create the plugin directory
+mkdir ~/.zsh
+
 # Install ZSH Syntax Highlighting plugin
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh-syntax-highlighting" --depth 1
-echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh/zsh-syntax-highlighting" --depth 1
+
+# Install ZSH Autosuggestions plugin
+git clone https://github.com/zsh-users/zsh-autosuggestions.git "$HOME/.zsh/zsh-autosuggestions" --depth 1
 
 # Change the default shell to ZSH
 chsh -s /bin/zsh

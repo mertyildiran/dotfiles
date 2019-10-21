@@ -43,7 +43,26 @@ cd Popcorn/
 wget https://mirror03.popcorntime.sh/repo/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
 tar -xvf Popcorn-Time-0.3.10-Linux-64.tar.xz
 
+# Install and configure ZSH
+sudo apt -y install zsh powerline fonts-powerline
+git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
+
+# Install Powerlevel9k theme for ZSH
+git clone https://github.com/Powerlevel9k/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+sed -i \
+'s/_THEME=\"robbyrussel\"/_THEME=\"agnoster\"/g' \
+~/.zshrc
+
+# Install ZSH Syntax Highlighting plugin
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git "$HOME/.zsh-syntax-highlighting" --depth 1
+echo "source $HOME/.zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> "$HOME/.zshrc"
+
+# Change the default shell to ZSH
+chsh -s /bin/zsh
+
 # Make tmux the default screen multiplexer for each shell session
+: '
 read -d '' TMUX_DEFAULT << EOF
 alias g=\"grep\"
 alias ls=\"ls --color=auto\"
@@ -55,16 +74,17 @@ if [[ ! $TERM =~ screen ]]; then
 fi
 EOF
 echo $TMUX_DEFAULT >> ~/.bashrc
+'
 
 # Install the bleeding edge Vim version from an unofficial PPA
 sudo add-apt-repository ppa:jonathonf/vim -y
 sudo apt update
-sudo apt install vim
+sudo apt -y install vim
 
 # Install the stable version of Neovim for an official PPA
 sudo apt-add-repository ppa:neovim-ppa/stable
 sudo apt update
-sudo apt install neovim
+sudo apt -y install neovim
 
 # Install vim-plug for Vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -76,10 +96,6 @@ curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
 
 # Link NeoVim's configuration file to Vim's
 ln -s ~/.vimrc ~/.config/nvim/init.vim
-
-# Alias vim to nvim
-echo 'alias vim="nvim"' >> ~/.bash_aliases
-echo 'alias vi="nvim"' >> ~/.bash_aliases
 
 # Install Exuberant Ctags for SpaceVim UI Layer Outline
 sudo apt -y install exuberant-ctags

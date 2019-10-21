@@ -14,3 +14,7 @@
 !.vim/
 !.vim/nerdtree_git_ignored_files.vim
 !.vim/.ycm_extra_conf.py
+!.bashrc
+!.bash_aliases
+!.zshrc
+!.zsh_aliases

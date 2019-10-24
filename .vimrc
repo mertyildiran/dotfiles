@@ -138,6 +138,9 @@ Plug 'ntpeters/vim-better-whitespace'
 " Automatically set 'shiftwidth' + 'expandtab' (indention) based on file type.
 Plug 'tpope/vim-sleuth'
 
+" Trying to unload, delete or wipe a buffer without closing the window or split?
+Plug 'qpkorr/vim-bufkill'
+
 " Run test suites for various languages.
 Plug 'janko/vim-test'
 
@@ -223,6 +226,8 @@ set autoread
 set backspace=indent,eol,start
 set textwidth=80
 set colorcolumn=80
+set splitbelow
+set splitright
 
 " Search and replacement related configurations
 set hlsearch
@@ -327,9 +332,9 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 " Buffers
-map gn :bn<cr>
-map gp :bp<cr>
-map gd :bd<cr>
+nnoremap <C-u> :BB<cr>
+nnoremap <C-i> :BF<cr>
+nnoremap <C-w> :BW<cr>
 
 " Navigate around splits with a single key combo.
 nnoremap <C-l> <C-w><C-l>

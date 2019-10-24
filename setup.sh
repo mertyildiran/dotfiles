@@ -19,6 +19,7 @@ git reset --hard c3ca237bc43cc46ba5f7747e8a5e58a8f657930f
 ./scripts/bootstrap-dev-debian.sh run make
 make
 yes | sudo make install
+cd ~/
 
 # Install Tilda terminal
 sudo apt install tilda
@@ -29,12 +30,14 @@ cd ~/Downloads
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome-stable_current_amd64.deb
 sudo apt -y install -f
+cd ~/
 
 # Download and install Atom
 cd ~/Downloads
 wget https://atom-installer.github.com/v1.35.1/atom-amd64.deb
 sudo dpkg -i atom-amd64.deb
 sudo apt -y install -f
+cd ~/
 
 # Download Popcorn Time
 cd ~/Downloads
@@ -42,6 +45,14 @@ mkdir Popcorn
 cd Popcorn/
 wget https://mirror03.popcorntime.sh/repo/build/Popcorn-Time-0.3.10-Linux-64.tar.xz
 tar -xvf Popcorn-Time-0.3.10-Linux-64.tar.xz
+cd ~/
+
+# Download and install Nerd Fonts
+cd ~/Downloads
+git clone https://github.com/ryanoasis/nerd-fonts.git  --depth 1
+cd nerd-fonts/
+./install.sh
+cd ~/
 
 # Install and configure ZSH
 sudo apt -y install zsh powerline fonts-powerline
@@ -112,6 +123,7 @@ sudo pip3 install --user pynvim
 cd ~/Downloads
 curl -LO https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep_0.10.0_amd64.deb
 sudo dpkg -i ripgrep_0.10.0_amd64.deb
+cd ~/
 
 # Install the Silver Searcher for SpaceVim's fast search functionlaity
 sudo apt -y install silversearcher-ag
@@ -135,6 +147,7 @@ vim +'PlugInstall --sync' +qa
 # Compile YouCompleteMe
 cd ~/.vim/plugged/youcompleteme
 python3 install.py --clang-completer --ts-completer
+cd ~/
 
 # Increase the volume of audio card
 alsamixer

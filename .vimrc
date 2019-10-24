@@ -210,6 +210,7 @@ call plug#end()
 
 
 source ~/.vim/nerdtree_git_ignored_files.vim
+source ~/.vim/fix_the_issue_between_ycm_and_ultisnips.vim
 
 filetype plugin indent on
 

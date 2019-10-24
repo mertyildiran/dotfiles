@@ -14,6 +14,7 @@
 !.vim/
 !.vim/nerdtree_git_ignored_files.vim
 !.vim/.ycm_extra_conf.py
+!.vim/fix_the_issue_between_ycm_and_ultisnips.vim
 !.bashrc
 !.bash_aliases
 !.zshrc

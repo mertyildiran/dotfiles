@@ -144,6 +144,9 @@ Plug 'qpkorr/vim-bufkill'
 " Run test suites for various languages.
 Plug 'janko/vim-test'
 
+" Use a file instead of a variable, allows per project configuration<Paste>
+Plug 'CharlesGueunet/VimFilify'
+
 
 " --- JavaSript ---
 " Vastly improved Javascript indentation and syntax support in Vim
@@ -375,4 +378,32 @@ let g:better_whitespace_guicolor='gray'
 augroup python
   autocmd!
   autocmd FileType python setlocal expandtab shiftwidth=4 softtabstop=4 tabstop=4
+augroup end
+
+" the plugin look for a file named '.ale_config' in the current project
+" and set the flags of C-family linter engine accordingly.
+" The '.ale_config' file just contains the compilation options (one per line)
+" Note: ale only cares 'clazy' in my case
+augroup vimmic_c_ale_config
+  autocmd FileType c let g:custom_c_options = Filify#process('.ale_config', {'default_return':'-std=c11 -Wall'})
+  autocmd FileType c let g:ale_c_clang_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_clangcheck_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_clangd_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_clangtidy_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_clazy_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_cpplint_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_flawfinder_options = g:custom_c_options
+  autocmd FileType c let g:ale_c_gcc_options = g:custom_c_options
+augroup end
+
+augroup vimmic_cpp_ale_config
+  autocmd FileType cpp let g:custom_cpp_options = Filify#process('.ale_config', {'default_return':'-std=c11 -Wall'})
+  autocmd FileType cpp let g:ale_cpp_clang_options = g:custom_cpp_options
+  autocmd FileType cpp let g:ale_cpp_clangcheck_options = g:custom_cpp_options
+  autocmd FileType cpp let g:ale_cpp_clangd_options = g:custom_cpp_options
+  autocmd FileType cpp let g:ale_cpp_clangtidy_options = g:custom_cpp_options
+  autocmd FileType cpp let g:ale_cpp_clazy_options = g:custom_cpp_options
+  autocmd FileType cpp let g:ale_cpp_cpplint_options = g:custom_cpp_options
+  autocmd FileType cpp let g:ale_cpp_flawfinder_options = g:custom_cpp_options
+  autocmd FileType cpp let g:ale_cpp_gcc_options = g:custom_cpp_options
 augroup end

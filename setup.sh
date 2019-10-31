@@ -164,3 +164,37 @@ sudo apt -y install net-tools
 
 # Install ranger
 sudo apt -y install ranger
+
+# Install the Administration Tool for IP Sets
+sudo apt -y install ipset
+
+# Protect against port scanners https://unix.stackexchange.com/a/407904/238277
+sudo ipset create port_scanners hash:ip family inet hashsize 32768 maxelem 65536 timeout 600
+sudo ipset create scanned_ports hash:ip,port family inet hashsize 32768 maxelem 65536 timeout 60
+sudo iptables -A INPUT -m state --state INVALID -j DROP
+sudo iptables -A INPUT -m state --state NEW -m set ! --match-set scanned_ports src,dst -m hashlimit --hashlimit-above 1/hour --hashlimit-burst 5 --hashlimit-mode srcip --hashlimit-name portscan --hashlimit-htable-expire 10000 -j SET --add-set port_scanners src --exist
+sudo iptables -A INPUT -m state --state NEW -m set --match-set port_scanners src -j DROP
+sudo iptables -A INPUT -m state --state NEW -j SET --add-set scanned_ports src,dst
+
+# Drop incoming ping requests
+sudo iptables -A INPUT -p icmp --icmp-type echo-request -j DROP
+
+# Reject incoming and outgoing telnet connections
+sudo iptables -A INPUT -p tcp --dport telnet -j REJECT
+sudo iptables -A OUTPUT -p tcp --dport telnet -j REJECT
+
+# Reject incoming and outgoing ssh connections
+sudo iptables -A INPUT -p tcp --dport ssh -j REJECT
+sudo iptables -A OUTPUT -p tcp --dport ssh -j REJECT
+# Reject all incoming ssh traffic except specified IP address range
+#sudo iptables -A INPUT -t filter -m iprange ! --src-range 10.1.1.90-10.1.1.100 -p tcp --dport 22 -j REJECT
+
+# Block an access to a specific website
+#sudo iptables -A INPUT -s facebook.com -p tcp --sport www -j DROP
+
+# Install Uncomplicated Firewall
+sudo apt -y install ufw
+# Configure the firewall
+sudo ufw default deny incoming
+sudo ufw default allow outgoing
+sudo ufw enable

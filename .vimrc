@@ -27,8 +27,11 @@ Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
 " Lean & mean status/tabline for vim that's light as air
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+"Plug 'vim-airline/vim-airline'
+"Plug 'vim-airline/vim-airline-themes'
+
+" a light and configurable statusline/tabline plugin for Vim
+Plug 'itchyny/lightline.vim'
 
 " fugitive.vim: A Git wrapper so awesome, it should be illegal
 Plug 'tpope/vim-fugitive'
@@ -208,9 +211,16 @@ Plug 'vim-python/python-syntax'
 " --- systemd ---
 Plug 'wgwoods/vim-systemd-syntax'
 
+" Plugin to make Vim behave more like a 'normal' editor
+Plug 'tombh/novim-mode'
+
+" a well-integrated, low-configuration buffer list that lives in the tabline
+Plug 'ap/vim-buftabline'
+
 " Initialize plugin system
 call plug#end()
 
+let g:novim_mode_use_editor_fixes = 1
 
 source ~/.vim/nerdtree_git_ignored_files.vim
 source ~/.vim/fix_the_issue_between_ycm_and_ultisnips.vim
@@ -232,6 +242,7 @@ set textwidth=80
 set colorcolumn=80
 set splitbelow
 set splitright
+set noshowmode
 
 " Search and replacement related configurations
 set hlsearch
@@ -243,7 +254,7 @@ if executable('ag')
 endif
 
 " Silver Searcher remapping
-nnoremap <C-S-f> :Ag!<CR>
+inoremap <A-f> <C-O>:Ag!<CR>
 
 " Silver Searcher with full screen preview
 command! -bang -nargs=* Ag
@@ -277,7 +288,7 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
-nnoremap <Leader>n :NERDTreeToggle<CR>
+inoremap <A-/> <C-O>:NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -294,7 +305,7 @@ let g:gitgutter_override_sign_column_highlight = 1
 
 
 " tagbar
-nmap <F8> :TagbarToggle<CR>
+inoremap <F8> <C-O>:TagbarToggle<CR>
 
 
 " Add spaces after comment delimiters by default
@@ -315,39 +326,44 @@ let g:NERDTrimTrailingWhitespace = 1
 let g:NERDToggleCheckAllLines = 1
 
 " vim-airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:airline#extensions#tabline#formatter = 'unique_tail'
-let g:airline_theme='onedark'
+"let g:airline#extensions#tabline#enabled = 1
+"let g:airline#extensions#tabline#left_sep = ' '
+"let g:airline#extensions#tabline#left_alt_sep = '|'
+"let g:airline#extensions#tabline#formatter = 'unique_tail'
+"let g:airline_theme='onedark'
 
 " Fix vim-airline branch symbol
-let g:airline_powerline_fonts = 1
-if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-endif
-let g:airline_symbols.branch = ''
+"let g:airline_powerline_fonts = 1
+"if !exists('g:airline_symbols')
+"    let g:airline_symbols = {}
+"endif
+"let g:airline_symbols.branch = ''
+
+" lightline.vim
+let g:lightline = {
+      \ 'colorscheme': 'one',
+      \ }
 
 " CtrlP with Silver Searcher
-nnoremap <C-p> :FZF<CR>
+inoremap <C-p> <C-O>:FZF<CR>
 
 " Emmet-vim
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 
 " Buffers
-nnoremap <C-u> :BB<cr>
-nnoremap <C-i> :BF<cr>
-nnoremap <C-w> :BW<cr>
+"nnoremap <C-u> :BB<cr>
+"nnoremap <C-i> :BF<cr>
+"nnoremap <C-w> :BW<cr>
 
 " Navigate around splits with a single key combo.
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-k> <C-w><C-k>
-nnoremap <C-j> <C-w><C-j>
+"nnoremap <C-l> <C-w><C-l>
+"nnoremap <C-h> <C-w><C-h>
+"nnoremap <C-k> <C-w><C-k>
+"nnoremap <C-j> <C-w><C-j>
 
 " Cycle through splits.
-nnoremap <S-Tab> <C-w>w
+"nnoremap <S-Tab> <C-w>w
 
 " Enable Autosave
 let g:auto_save = 1
@@ -356,7 +372,7 @@ let g:auto_save = 1
 let g:indentLine_char_list = ['¦', '┆', '┊']
 
 " vim-autoformat
-noremap <F3> :Autoformat<CR>
+inoremap <F3> <C-O>:Autoformat<CR>
 
 " vim-markdown
 let g:vim_markdown_folding_disabled = 1
@@ -366,8 +382,8 @@ let g:ycm_confirm_extra_conf = 0
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 
 " Indent multiple times quickly
-vnoremap < <gv
-vnoremap > >gv
+"vnoremap < <gv
+"vnoremap > >gv
 
 " vim-better-whitespace
 let g:better_whitespace_ctermcolor='gray'

@@ -147,6 +147,9 @@ sudo apt -y install fonts-firacode
 # A command line utility to display dependency tree of the installed Python packages
 sudo pip3 install pipdeptree
 
+# Install NCurses Disk Usage
+sudo apt -y install ncdu
+
 # Install the Vim plugins
 vim +'PlugInstall --sync' +qa
 

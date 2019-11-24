@@ -144,6 +144,9 @@ sudo apt -y install yarn
 # Install Fira Code font
 sudo apt -y install fonts-firacode
 
+# A command line utility to display dependency tree of the installed Python packages
+sudo pip3 install pipdeptree
+
 # Install the Vim plugins
 vim +'PlugInstall --sync' +qa
 

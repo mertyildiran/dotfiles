@@ -141,6 +141,9 @@ sudo apt -y install npm
 # Install yarn
 sudo apt -y install yarn
 
+# Install Fira Code font
+sudo apt -y install fonts-firacode
+
 # Install the Vim plugins
 vim +'PlugInstall --sync' +qa
 

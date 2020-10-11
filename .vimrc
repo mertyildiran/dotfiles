@@ -164,10 +164,6 @@ Plug 'othree/html5.vim'
 " Vim syntax highlighting for Blade templates
 Plug 'jwalton512/vim-blade'
 
-" --- Trackers ---
-" Vim plugin for automatic time tracking and metrics generated from your programming activity
-Plug 'wakatime/vim-wakatime'
-
 " --- SCSS ---
 Plug 'cakebaker/scss-syntax.vim'
 

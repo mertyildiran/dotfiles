@@ -7,32 +7,12 @@ export ZSH=$HOME/.oh-my-zsh
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerlevel9k/powerlevel9k"
-POWERLEVEL9K_MODE='nerdfont-complete'
-
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(os_icon context dir newline status)
-
-POWERLEVEL9K_CONTEXT_TEMPLATE='%n'
-POWERLEVEL9K_CONTEXT_DEFAULT_FOREGROUND=249 # white
-POWERLEVEL9K_DIR_HOME_FOREGROUND=249
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND=249
-POWERLEVEL9K_DIR_ETC_FOREGROUND=249
-POWERLEVEL9K_DIR_DEFAULT_FOREGROUND=249
-POWERLEVEL9K_STATUS_VERBOSE=true
-POWERLEVEL9K_STATUS_CROSS=true
-
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(vcs)
-
-POWERLEVEL9K_SHOW_CHANGESET=true
-
-# History size
-HISTSIZE=10000
-SAVEHIST=10000
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
 # ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
@@ -84,8 +64,8 @@ SAVEHIST=10000
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
@@ -131,6 +111,8 @@ if [ -f ~/.zsh_aliases ]; then
     . ~/.zsh_aliases
 fi
 
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export CUDA_HOME=/usr/local/cuda
@@ -144,3 +126,14 @@ source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Enable completions
 autoload -U compinit
 compinit
+
+# History size
+HISTSIZE=10000
+SAVEHIST=10000
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export PATH="$HOME/.symfony/bin:$PATH"
